@@ -4,11 +4,12 @@ Chat with Customer Data - Streamlit Application
 
 import streamlit as st
 import pandas as pd
+import os
 from data_loader import load_excel_data
 from query_engine import create_query_engine
 
-# API Key - Add your Gemini API key here
-API_KEY = "AIzaSyBNtJXzXMwVdBpLMyDDvIa53c2keAca4Ew"
+# API Key - Set GEMINI_API_KEY environment variable
+API_KEY = os.getenv("GEMINI_API_KEY")
 
 # Page title
 st.title("Chat with Customer Data")
@@ -32,7 +33,9 @@ if uploaded_file is not None:
 
     # Process question
     if st.button("Get Answer"):
-        if not question:
+        if not API_KEY:
+            st.error("Please set GEMINI_API_KEY environment variable")
+        elif not question:
             st.warning("Please enter a question")
         else:
             with st.spinner("Processing..."):

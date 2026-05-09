@@ -47,10 +47,9 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Step 4: Add your Gemini API key
-Open `app.py` and add your API key on line 11:
-```python
-API_KEY = "your_api_key_here"
+### Step 4: Set your Gemini API key
+```bash
+export GEMINI_API_KEY="your_api_key_here"
 ```
 
 Get free API key from: https://makersuite.google.com/app/apikey
