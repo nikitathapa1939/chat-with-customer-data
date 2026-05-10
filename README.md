@@ -30,32 +30,27 @@ chat-with-customer-data/
 
 ## How to setup and run
 
-### Step 1: Clone this project
+Get free API key from: https://makersuite.google.com/app/apikey
+
+**For Mac/Linux:**
 ```bash
 git clone https://github.com/nikitathapa1939/chat-with-customer-data.git
 cd chat-with-customer-data
-```
-
-### Step 2: Create virtual environment
-```bash
 python3 -m venv venv
 source venv/bin/activate
-```
-
-### Step 3: Install packages
-```bash
 pip install -r requirements.txt
-```
-
-### Step 4: Set your Gemini API key
-```bash
 export GEMINI_API_KEY="your_api_key_here"
+streamlit run app.py
 ```
 
-Get free API key from: https://makersuite.google.com/app/apikey
-
-### Step 5: Run the app
+**For Windows (Command Prompt):**
 ```bash
+git clone https://github.com/nikitathapa1939/chat-with-customer-data.git
+cd chat-with-customer-data
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+set GEMINI_API_KEY=your_api_key_here
 streamlit run app.py
 ```
 
